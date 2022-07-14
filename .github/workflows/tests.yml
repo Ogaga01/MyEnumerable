@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Tests
 
 on: pull_request
@@ -17,3 +18,24 @@ jobs:
           gem install --no-document rspec -v '>=3.0, < 4.0'
       - name: RSpec Report
         run: rspec --force-color --format documentation
+=======
+name: Tests
+
+on: pull_request
+
+jobs:
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.0.x
+      - name: Setup RSpec
+        run: |
+          [ -f Gemfile ] && bundle
+          gem install --no-document rspec -v '>=3.0, < 4.0'
+      - name: RSpec Report
+        run: rspec --force-color --format documentation
+>>>>>>> 923613f1297088cb33f5a9d63cfa561486714412
