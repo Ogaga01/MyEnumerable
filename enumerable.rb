@@ -4,7 +4,7 @@ module MyEnumerable
     each do |i|
       ans = false unless yield i
     end
-    return ans
+    ans
   end
 
   def any?
@@ -12,7 +12,7 @@ module MyEnumerable
     each do |i|
       ans = true if yield i
     end
-    return ans
+    ans
   end
 
   def filter
